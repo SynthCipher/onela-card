@@ -116,6 +116,33 @@
           background-position: 0% 50%;
         }
       }
+
+      /* Phone button - green glow style */
+     
+      .phone-link a {
+        position: relative;
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 50px;
+        color: #fff; /* white text */
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 12px;
+        background: #25d366; /* WhatsApp green */
+        box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+        transition: 0.3s;
+        border: 2px solid #128C7E; /* darker green border */
+      }
+
+      .phone-link a i {
+        margin-right: 8px;
+      }
+
+      .phone-link a:hover {
+        background: #20b954;
+        box-shadow: 0 0 18px rgba(37, 211, 102, 0.8);
+      }
       /* Section Title */
       .section-title {
         background: #000;
@@ -203,6 +230,14 @@
           <a href="https://onela.in" target="_blank">
             <i class="fas fa-globe"></i>
             Visit Our Website
+          </a>
+        </div>
+
+        <!-- Phone button -->
+        <div class="phone-link">
+          <a href="tel:+91917006407397">
+            <i class="fas fa-phone-alt"></i>
+            Call Us
           </a>
         </div>
 
