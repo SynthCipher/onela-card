@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onela - Digital Card</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f8fafc, #f1f5f9, #e2e8f0);
+        color: #334155;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(71, 85, 105, 0.1);
+        padding: 25px;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+      }
+
+      .profile-section img {
+        width: 190px;
+        height: 70px;
+        object-fit: contain;
+      }
+
+      .tagline {
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 25px;
+        line-height: 1.4;
+      }
+
+      .main-link a {
+        position: relative;
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 50px;
+        color: #1e293b;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        background: #ffffff;
+        overflow: hidden;
+        z-index: 1;
+        border: 1px solid #cbd5e1;
+      }
+
+      .main-link a i {
+        margin-right: 8px;
+      }
+
+      /* Animated border effect with cooler colors */
+      .main-link a::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 50px;
+        background: linear-gradient(
+          270deg,
+          #3b82f6,
+          #06b6d4,
+          #10b981,
+          #8b5cf6,
+          #3b82f6
+        );
+        background-size: 400% 400%;
+        animation: borderGlow 6s linear infinite;
+        z-index: -1;
+      }
+
+      .main-link a::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background: #ffffff;
+        border-radius: 50px;
+        z-index: -1;
+      }
+
+      @keyframes borderGlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Phone button - clean blue */
+      .phone-link a {
+        position: relative;
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 50px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 12px;
+        background: #3b82f6;
+        box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+        transition: 0.3s;
+        border: 2px solid #2563eb;
+      }
+
+      .phone-link a i {
+        margin-right: 8px;
+      }
+
+      .phone-link a:hover {
+        background: #2563eb;
+        box-shadow: 0 0 18px rgba(59, 130, 246, 0.4);
+      }
+
+      /* Section Title */
+      .section-title {
+        background: #1e293b;
+        color: #f8fafc;
+        padding: 10px 15px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 25px 0 15px;
+      }
+
+      /* Link Cards */
+      .links {
+        display: grid;
+        gap: 15px;
+      }
+
+      .link-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(71, 85, 105, 0.08);
+        text-decoration: none;
+        color: #334155;
+        transition: 0.3s;
+        border: 1px solid #e2e8f0;
+      }
+
+      .link-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(71, 85, 105, 0.12);
+        background: #f8fafc;
+      }
+
+      .link-info {
+        font-size: 14px;
+        text-align: left;
+      }
+
+      .link-info span {
+        display: block;
+        font-size: 12px;
+        color: #64748b;
+      }
+
+      /* Square Icon Style */
+      .link-icon {
+        width: 40px;
+        height: 40px;
+        background: #f1f5f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        font-size: 18px;
+        transition: 0.3s;
+        color: #475569;
+      }
+
+      .link-card:hover .link-icon {
+        background: #1e293b;
+        color: #f8fafc;
+      }
+
+      .footer-section {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #94a3b8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="profile-section">
+          <img src="assets/logo1.png" alt="onela logo" />
+          <p class="tagline">
+            Powered by teamwork, creating modern digital solutions together.
+          </p>
+        </div>
+
+        <!-- Keep only top website button -->
+        <div class="main-link">
+          <a href="https://onela.in" target="_blank">
+            <i class="fas fa-globe"></i>
+            Visit Our Website
+          </a>
+        </div>
+
+        <!-- Phone button -->
+        <div class="phone-link">
+          <a href="tel:+917006407397">
+            <i class="fas fa-phone-alt"></i>
+            Call Us
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="section-title">Connect With Us</div>
+        <div class="links">
+          <a
+            href="https://www.instagram.com/onela.in/?hl=en"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-info">
+              Instagram
+              <span>@onela.in</span>
+            </div>
+            <div class="link-icon"><i class="fab fa-instagram"></i></div>
+          </a>
+          <a href="mailto:hello@onela.in" target="_blank" class="link-card">
+            <div class="link-info">
+              Email
+              <span>hello@onela.in</span>
+            </div>
+            <div class="link-icon"><i class="fas fa-envelope"></i></div>
+          </a>
+          <a
+            href="https://wa.me/919682574824"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-info">
+              WhatsApp
+              <span>+91 96825 74824</span>
+            </div>
+            <div class="link-icon"><i class="fab fa-whatsapp"></i></div>
+          </a>
+          <a
+            href="https://github.com/SynthCipher?tab=repositories"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-info">
+              GitHub
+              <span>SynthCipher</span>
+            </div>
+            <div class="link-icon"><i class="fab fa-github"></i></div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jigmatdorjey/"
+            target="_blank"
+            class="link-card"
+          >
+            <div class="link-info">
+              LinkedIn
+              <span>Jigmat Dorjey</span>
+            </div>
+            <div class="link-icon"><i class="fab fa-linkedin-in"></i></div>
+          </a>
+        </div>
+
+        <div class="footer-section">
+          <p class="copyright">© 2025 Onela. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
